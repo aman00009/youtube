@@ -27,7 +27,7 @@ const Recommendation = ({ tags }) => {
 
     useEffect(() => {
         const fetchVideos = async () => {
-            const res = await axios.get(`http://localhost:4004/api/videos/tags?tags=${tags}`);
+            const res = await axios.get(`https://youtube12.vercel.app/api/videos/tags?tags=${tags}`);
             setVideos(res.data);
         };
         fetchVideos();
