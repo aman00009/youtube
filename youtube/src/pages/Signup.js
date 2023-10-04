@@ -59,22 +59,42 @@ const Signup = () => {
 
         dispatch(signinStart());
 
+        // try {
+        //     const res = await axios.post("https://youtube12.vercel.app/api/auths/signup", { name, password, email }, // Send name and password,email as an object
+        //         {
+        //             withCredentials: true,
+        //             // Include credentials (cookies) in the request
+        //         });
+        //     console.log('res in signInWithPopup', res)
+        //     dispatch(signinSuccess(res.data));
+        //     navigate("/signin");
+        // } catch (err) {
+        //     toast.error(err.response.data.message)
+        //     //  console.log("err in signup", err.response.data)
+        //     dispatch(signininFailure());
+
+
+        // }
+
         try {
-            const res = await axios.post("https://youtube12.vercel.app/api/auths/signup", { name, password, email }, // Send name and password,email as an object
-                {
-                    withCredentials: true,
-                    // Include credentials (cookies) in the request
-                });
-            console.log('res in signInWithPopup', res)
-            dispatch(signinSuccess(res.data));
-            navigate("/signin");
-        } catch (err) {
-            toast.error(err.response.data.message)
-            //  console.log("err in signup", err.response.data)
-            dispatch(signininFailure());
-
-
+      const res = await axios.post(
+        "https://youtube12.vercel.app/api/auths/signup",
+        { name, password },
+        {
+          withCredentials: true,
         }
+      );
+      dispatch(signinSuccess(res.data));
+
+      // Navigate to a new URL (backend domain) after successful signup
+      window.location.href = "https://youtube12.vercel.app"; // Change this URL to your desired destination
+
+    } catch (err) {
+      toast.error(err.response.data.message);
+      dispatch(signinFailure());
+    }
+
+        
     };
 
 
