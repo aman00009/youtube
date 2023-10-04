@@ -20,7 +20,7 @@ const Comment = ({ comment, onDeleteComment, userId, imgUrl }) => {
   useEffect(() => {
     const fetchChannel = async () => {
       try {
-        const res = await axios.get(`http://localhost:4004/api/users/find/${comment.userId}`);
+        const res = await axios.get(`https://youtube12.vercel.app/api/users/find/${comment.userId}`);
         setChannel(res.data);
         // console.log("chanell===", res.data)
 
