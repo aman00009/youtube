@@ -17,7 +17,7 @@ const Search = () => {
 
     useEffect(() => {
         const fetchVideos = async () => {
-            const res = await axios.get(`http://localhost:4004/api/videos/search${query}`);
+            const res = await axios.get(`https://youtube12.vercel.app/api/videos/search${query}`);
             setVideos(res.data);
         };
         fetchVideos();
