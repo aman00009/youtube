@@ -22,7 +22,7 @@ const Signin = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("https://youtube12.vercel.app/api/auths/signin", { name, password },
+      const res = await axios.post("https://youtubefrontend.vercel.app/api/auths/signin", { name, password },
         // Send name and password as an object
         {
           withCredentials: true, // Include credentials (cookies) in the request
