@@ -52,20 +52,20 @@ mongoose.connect(mongoDb, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 
-const connect = () => {
-    mongoose.connect(mongoDb, { useNewUrlParser: true, useUnifiedTopology: true })
-        .then(() => {
-            console.log("Connected to db");
-        })
-        .catch(err => {
-            console.error("Error connecting to MongoDB:", err);
-        });
-}
+// const connect = () => {
+//     mongoose.connect(mongoDb, { useNewUrlParser: true, useUnifiedTopology: true })
+//         .then(() => {
+//             console.log("Connected to db");
+//         })
+//         .catch(err => {
+//             console.error("Error connecting to MongoDB:", err);
+//         });
+// }
 
-
+mongoose.connect('mongodb+srv://aman:aman9616223392@cluster0.rr10twt.mongodb.net/Youtube?retryWrites=true&w=majority')
 
 app.listen(4004, () => {
-    connect(),
+   // connect(),
         console.log("Connected at 4004 port")
 })
 
