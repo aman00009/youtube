@@ -22,7 +22,7 @@ const Signin = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("http://localhost:4004/api/auths/signin", { name, password },
+      const res = await axios.post("https://youtube12.vercel.app/api/auths/signin", { name, password },
         // Send name and password as an object
         {
           withCredentials: true, // Include credentials (cookies) in the request
@@ -44,7 +44,7 @@ const Signin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         axios
-          .post("http://localhost:4004/api/auths/google", {
+          .post("https://youtube12.vercel.app/api/auths/google", {
             name: result.user.displayName,
             email: result.user.email,
             img: result.user.photoURL,
