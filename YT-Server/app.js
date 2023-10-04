@@ -104,9 +104,9 @@ app.use((err, req, res, next) => {
 // Enable CORS for your frontend domain
 app.use(
   cors({
-    origin:'https://youtubefrontend.vercel.app',
+    origin: 'https://youtubefrontend.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Enable cookies and authentication headers
+    credentials: true,
   })
 );
 
