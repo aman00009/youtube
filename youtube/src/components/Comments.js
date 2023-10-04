@@ -24,11 +24,11 @@ const Comments = ({ videoId, path }) => {
 
     const fetchComment = async () => {
       try {
-        const res = await axios.get(`http://localhost:4004/api/comments/${videoId}`);
+        const res = await axios.get(`https://youtube12.vercel.app/api/comments/${videoId}`);
         console.log("comments get", res.data)
 
         // Fetch all video data
-        const videoResponse = await axios.get('http://localhost:4004/api/videos/all');
+        const videoResponse = await axios.get('https://youtube12.vercel.app/api/videos/all');
 
         // Set videos in state
         setVideos(videoResponse.data.reduce((acc, video) => {
@@ -59,7 +59,7 @@ const Comments = ({ videoId, path }) => {
         withCredentials: true,
       });
 
-      const res = await axiosForComment.post("http://localhost:4004/api/comments", { desc: comment, videoId }, { withCredentials: true, });
+      const res = await axiosForComment.post("https://youtube12.vercel.app/api/comments", { desc: comment, videoId }, { withCredentials: true, });
       // console.log("comments send  data", res.data)
 
       // Add the new comment to the comments state
@@ -96,7 +96,7 @@ const Comments = ({ videoId, path }) => {
       });
 
       const res = await axiosForComment.delete(
-        `http://localhost:4004/api/comments/${commentId}?userId=${userId}&videoId=${videoId}`
+        `https://youtube12.vercel.app/api/comments/${commentId}?userId=${userId}&videoId=${videoId}`
       );
       if (res.status === 200) {
         // Remove the deleted comment from the state
