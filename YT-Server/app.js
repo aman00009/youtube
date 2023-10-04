@@ -101,6 +101,16 @@ app.use((err, req, res, next) => {
     })
 })
 
+// Enable CORS for your frontend domain
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://youtubefrontend.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
+
+
 app.use('/', indexRouter);
 app.use('/api/auths', authRouter);
 app.use('/api/users', usersRouter);
