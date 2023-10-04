@@ -101,16 +101,15 @@ app.use((err, req, res, next) => {
     })
 })
 
-const cors = require('cors');
 
+// Configure CORS to allow requests from your frontend domain
 const corsOptions = {
-  origin: 'https://youtubefrontend.vercel.app',
+  origin: 'https://youtubefrontend.vercel.app', // Replace with your frontend domain
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
+  credentials: true, // Enable cookies and authentication headers
 };
 
-app.use(cors(corsOptions));
-
+app.use(cors(corsOptions)); // Use the cors middleware with the specified options
 
 
 app.use('/', indexRouter);
