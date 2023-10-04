@@ -64,10 +64,10 @@ mongoose.connect(mongoDb, { useNewUrlParser: true, useUnifiedTopology: true })
 
 mongoose.connect('mongodb+srv://aman:aman9616223392@cluster0.rr10twt.mongodb.net/Youtube?retryWrites=true&w=majority')
 
-app.listen(4004, () => {
-   // connect(),
-        console.log("Connected at 4004 port")
-})
+// app.listen(4004, () => {
+//    // connect(),
+//         console.log("Connected at 4004 port")
+// })
 
 
 // const corsOptions = {
