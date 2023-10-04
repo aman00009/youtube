@@ -71,7 +71,7 @@ app.listen(4004, () => {
 
 
 const corsOptions = {
-    origin: 'youtube12.vercel.app', // Replace with your client's domain
+    origin: ['https://youtube12.vercel.app'], // Replace with your client's domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Enable cookies and authentication headers
 };
