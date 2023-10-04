@@ -54,7 +54,7 @@ const Signup = () => {
         if (Object.keys(errors).length > 0) {
             return;
         }
-
+  
 
 
         dispatch(signinStart());
